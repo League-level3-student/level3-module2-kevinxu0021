@@ -17,7 +17,7 @@ class _02_SwappingDigits {
 	// of order, swap them. Repeat this until the array is in order.
 	public static void sortIntArray(int[] arr) {
 		for (int i = 0; i < arr.length; i++) {
-			for (int j = 0; j < arr.length - 1; i++) {
+			for (int j = 0; j < arr.length - 1; j++) {
 				if (arr[j] > arr[j + 1]) {
 					int temp;
 					temp = arr[j];
@@ -34,7 +34,7 @@ class _02_SwappingDigits {
 	public static int findMiddle(int[] arr) {
 		sortIntArray(arr);
 		if (arr.length % 2 == 1) {
-			return arr[arr.length / 2 + 1];
+			return arr[arr.length / 2];
 		} else if (arr.length % 2 == 0) {
 			int a = arr[arr.length / 2] + arr[arr.length / 2 + 1];
 			double b = a / 2;
