@@ -22,9 +22,9 @@ class _02_SwappingDigitsTest {
         assertArrayEquals(q, z);
     }
     
-    @Test
-    void test3() {
-        int[] m = {7, 3, 9, 5, 2};
-        assertEquals(5, _02_SwappingDigits.findMiddle(m));
-    }
+    //@Test
+    //void test3() {
+   //     int[] m = {7, 3, 9, 5, 2};
+   //     assertEquals(5, _02_SwappingDigits.findMiddle(m));
+   // }
 }
