@@ -38,12 +38,27 @@ public class ThanosSorter extends Sorter {
 	 */
 	@Override
 	void sort(int[] arr, SortingVisualizer display) {
+		int multiplier = 2;
+		int side = 0;
 		for (int i = 0; i < arr.length; i++) {
 			for (int k = 0; k < arr.length - 1; k++) {
 				if (arr[k] > arr[k + 1]) {
-					for (int j = arr.length - 1; j >= arr.length / 2; j--) {
-						arr[j] = 0;
-						display.updateDisplay();
+					if (side == 0) {
+						for (int j = arr.length - 2; j >= arr.length / multiplier; j--) {
+							arr[j] = 0;
+							display.updateDisplay();
+						}
+						i = 0;
+						side = 1;
+						multiplier = multiplier * 2;
+					} else if (side == 1) {
+						for (int j = 1; j < arr.length / multiplier; j++) {
+							arr[j] = 0;
+							display.updateDisplay();
+						}
+						i = 0;
+						side = 0;
+						multiplier = multiplier * 2;
 					}
 				}
 			}
