@@ -1,5 +1,7 @@
 package _04_JavaClassSearchAndSort;
 
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /*
@@ -7,24 +9,37 @@ import java.util.List;
  * methods below.
  */
 public class _02_JavaClassSearchSort {
-    
-    public static int[] arraySort(int[] arr) {
-        
-        return null;
-    }
-    
-    public static List<Double> listSort(List<Double> list){
-        
-        return null;
-    }
 
-    public static Boolean arraySearch(char[] arr, char key) {
-        
-        return null;
-    }
-    
-    public static Boolean listSearch(List<Character> list, Character key) {
-        
-        return null;
-    }
+	public static int[] arraySort(int[] arr) {
+		Arrays.sort(arr);
+
+		return arr;
+	}
+
+	public static List<Double> listSort(List<Double> list) {
+		Collections.sort(list);
+		return list;
+	}
+
+	public static Boolean arraySearch(char[] arr, char key) {
+		Arrays.sort(arr);
+		int output = -1;
+		output = Arrays.binarySearch(arr, key);
+		if (output <= -1) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+
+	public static Boolean listSearch(List<Character> list, Character key) {
+		int index = -1;
+		Collections.sort(list);
+		index = Collections.binarySearch(list, key);
+		if (index <= -1) {
+			return false;
+		} else {
+			return true;
+		}
+	}
 }
